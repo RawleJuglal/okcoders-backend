@@ -1,0 +1,11 @@
+Scraping a website is gathering data from a website that is not yours.
+*Go find a website that you'd like to pull all the information from*
+
+
+Frameworks
+ lodash - a function approach to writing code, a utility library. A bunch of function that can be use particularly .map on a collection.
+ mongoose - the wrapper within the express application that will provide function to gather and filter data in mongodb
+ express - library on top of node that helps write server applications
+ request - library in node that allows us to make request to particular websites (used to scrape the website)
+ cheerio - a light weight jquery type that allows you to target the html elements on a website
+
