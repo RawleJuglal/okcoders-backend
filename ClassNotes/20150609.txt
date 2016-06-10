@@ -1,0 +1,26 @@
+Other types in javascript
+
+undefined - it has a value we just do not know it yet
+null - it does not have a value
+NaN - not a number
+
+&& - can chain expression together and get back a boolean value based on the and/or tables
+|| - can chain expressions together and get back a boolean value based on the and/or tables
+
+A statement is not returning a value
+An expression is returning a value
+
+
+// COMMAND LINE LESSON 
+
+pwd - print working directory
+ls - list everything in folder
+cd - change directory
+
+console programs and Optional Flags
+use a dash after the name of the program
+ex ls-l the -l stands for long version
+mkdir (folderName) - to make a new folder
+rmdir - if directory is empty it will remove it
+rm (fileName) - it will remove the file
+rm -r - remove recursively the directory and any of the contents within it
