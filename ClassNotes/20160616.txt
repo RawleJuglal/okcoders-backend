@@ -1,0 +1,28 @@
+First thing you want to do when creating a new project is mkdir
+Then cd inside folder
+Then git init will create a new git repository
+git status will let you see what files git does not know about
+git commit -m 'message'- every commit will usually look like this(this is the equivalent of saving)
+git diff - this will allow you to see the difference in the file (this can only be done before you git add .)
+SYNTAX for writing messsages feature(history of the world paper): added some new paragraph
+Other choices beside feature, bug, release
+git log - a list of commits that have been done
+git show HEAD~1 
+    HEAD is wherever you currently are
+    ~1- back one
+So this is show me the commit back one of where we are now.
+git checkout file - this will allow you to revert back from the changes that you made.
+git branch - will tell you what branches you have
+git branch branchName - this will allow you to create a new branch
+git checkout -b branchName - this will create a new branch and will switch to that branch
+A pull request is me the developer asking the author to pull my changes into the master branch
+git merge branchYouWantToMerge -n this will merge whatever changes were made to the branch into the current branch you are in, probably master
+git pull - this is fetching and merging the changes that are on a repository that you are connected to, into your local projectgit 
+
+git rebase
+git cherry-pick
+git reset
+
+Objects & Arrays
+Access things by name is the way you will reach things in an object: syntax {}
+Access things by a number is the way to reach things in an array: syntax []
