@@ -114,5 +114,5 @@ function bar(x) {
 /* uncomment the next three lines one at a time and run the program */
 
 //foo(12)
- foo(15)
+// foo(15)
 // bar(12)
