@@ -1,0 +1,5 @@
+Synchronus vs Asynchronus - sometimes referred to as parallel
+Although you might write your code in a top to bottom fashion. If you use 
+asynchronus function then you may see things for later lines of code show up before
+things above it. The idea is that things are working on getting the information it needs
+but continue to process other things not related to that function.

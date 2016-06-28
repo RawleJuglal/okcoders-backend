@@ -1,7 +1,7 @@
 var fs = require('fs');
 
-var args = process.argv[];
-var path = args[2];
+var argsProvided = process.argv;
+var path = argsProvided[2];
 
 fs.readFile(path, (err, data)=>{
     if(err)
