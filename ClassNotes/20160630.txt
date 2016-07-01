@@ -1,0 +1,51 @@
+Once mongodb is installed want to do to things
+My DB path //SPECIFIC TO RAWLE rawlejuglal-ok-coders-backend-3446021:27017
+
+you need to run mongo Daemon 
+ for windows that is the mongo.exe 
+    >type in mongod [Enter]
+Ideally it should be listening on 27017
+
+you need to make a new terminal windows
+type in mongo[Enter]
+it should say 
+    MongoDB shell version 3.2.7
+    connnecting to:test
+    
+Commands for using in Mongo
+    show dbs - shows all the databases that are existing 
+    use (nameOfNewDatabase) - will create a new Database with this nameOfNewDatabase
+    db.(nameOfNewCollection).insert({key:'stringvalue',key:'stringvalue',key:numberValue}) - command to insert information into collection
+    //if you do the above correctly you will see something like nInserted:1
+    db.(nameOfNewCollection).insert([{key:'stringValue', key:numberValue},{key:'stringValue', key:numberValue}]);
+    db.(nameOfCollection).find() - if you do not pass anything else this will give you all the values in your collection. It will automatically add unique id
+    db.(nameOfCollection).find({key:'value'})  - this will let you filter by key value pair
+    db.test.find({_id : ObjectId("5775ac9943215bf071f44e4b")}) - will return a result that matches this ObjectId
+    db.test.find(ObjectId,{lastName: 'false'}) - return everything in the object except the item you specified as false
+    db.test.updateMany({}, {$set: {diet:'veg'}}) - this is how you update //it is saying all items {}, set them with key:value {$set : {diet:'veg'}}
+    db.test.update({_id: ObjectId('#')},'key:value') *This may be incorrect could not type and watch fast enough*
+    db.test.deleteOne({_id: ObjectId('#')}) - this will delete by the objectId
+    db.test.deleteMany({}) - this will delete all the elements in the collection
+    db.getName() - will show you what db you are currently in
+    
+Documentation can be found at https://docs.mongodb.com/manual
+
+To import a large data set you will move the .json file into whatever folder you want. Make sure your current directory is the same and type
+mongoimport --db (nameOfDatabase) --collection (nameofCollection) --drop --file enron.json - this will bulk add all this to a collection and database you specified. The --drop means:If it exist it will
+delete the collection and start fresh. If you don't add drop it will try to append to the collection
+
+db.(nameOfCollection).limit(2).pretty() - limit will tell it how many that you want back, pretty will help with the object structure to read
+
+You can save a variable in mongo *DID NOT GET THIS DOWN*
+
+db.(nameOfCollection).count() - will tell you how many items are in the collection
+db.(nameOfCollection).distinct('key') - will give back an array of the values of this key 
+db.(nameOfCollection).find({key:'value', key:'value'}).limit(10).pretty() - will do an and where it finds collection data that matches key/value and second key/value
+db.emails.find({$or: [{sender:/rosalee/i},{sender:/bob/i}]}).limit(2).pretty() - will do an or where it finds collection data that matches key/value or second key/value
+db.emails.find({$or: [{sender:'/rosalee/i'}, {sender:/ken/i}]}).sort().limit(2) - .sort will specify the order that you get stuff back in
+
+1.db.emails.count()
+2.db.emails.find({}, {date:true}).sort({date: 1}).limit(1).pretty()
+3.db.emails.find({}, {date:true}).sort({date: -1}).limit(1).pretty()
+4.db.emails.find({text:/money/i}).limit(1).pretty()
+5.db.emails.find
