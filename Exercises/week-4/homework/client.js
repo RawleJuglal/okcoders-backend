@@ -41,11 +41,27 @@ var findKeyword = function(db, callback){
   });
 }
 
+var findMostEmails = function(db, callback){
+  var senders = db.collection('emails').aggregate([{$group: {"sender": "rosalee.fleming@enron.com", "count": {$sum:1}}}]).toArray(function(err,results){
+    console.log(senders);
+    console.log(results);
+    callback(results);
+  })
+  /*senders.each(function(err, docs){
+    if(docs != null)
+      {
+        console.dir(docs);
+      } else {
+        callback();
+      }
+  });*/
+}
+
 MongoClient.connect(url, function(err, db) {
   if (err) { console.log("error!") }
   else
     {
-      findKeyword(db, function() {
+      findMostEmails(db, function() {
           db.close();
       });
     }
