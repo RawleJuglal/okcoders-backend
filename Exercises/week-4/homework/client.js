@@ -66,12 +66,17 @@ MongoClient.connect(url, function(err, db) {
       });
     }
 
- /* var collection = db.collection('emails')
+ /*
+ FIND AND LOG ALL DOCUMENTS IN COLLECTION
+ var collection = db.collection('emails')
   collection.find({}).toArray(function(err, docs) {
     console.log(docs[0])
     db.close()
   });*/
- /*var collection = db.collection('emails');
+  
+ /*
+ COUNT ANSWER
+ var collection = db.collection('emails');
   collection.count(function(err, count){
     if(err)
       {
