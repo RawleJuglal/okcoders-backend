@@ -1,0 +1,14 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "Homework Assignment MongoDB",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": " <Rawle Juglal 'rawledjuglal@gmail.com'>",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.1.18"
+  }
+}
