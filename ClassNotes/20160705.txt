@@ -1,0 +1,45 @@
+Client - your browswer or you the person asking for a website
+  Code can be sent back to the client in a few forms
+    - Text
+    - HTML
+    - Javascript
+    - Json
+  The browser has a few things it can do 
+   - Manipulate graphics
+   -V8
+   -DOM - the browsers interpretation of the HTML
+  The Client can make a few request to the server GET - retrieve, POST - create, PUT - edit/update, DELETE - delete 
+Server - The server responds to the HTTP request and send back the (text,html,javascript,json) to the client
+  Other things the server can do based on the request is go to a database to get data and send that back to client
+DNS/Internet - the link between Client & Server 
+ - This typically is an HTTP request that connects to the IP Address
+Express Code is server code that handles client requests
+
+
+curl --v(verbose) url (www.google.com)
+It will connect to the ip address (74.125.193.147)
+GET / - this will tell the server get me the root file
+
+HTTP/ 1.1. 200 OK - 200 ok is the status code that says we were able to get the information requested.
+
+MY GOOGLE DIDN"T SHOW THE METHOD WITH CTRL SHIFT J
+
+HTML STRUCTURE
+<html>
+  <head>
+   <title></title>
+  </head>
+  <body>
+    <p></p> <--all elements can contain classes or ids
+    <div id='firstID' class='firstClass'></div>
+    <h1></h1>
+    <img src='#'>
+    <a href='#'></a>
+    
+  </body>
+<html>
+
+RESTful API - representational state transfer 
+  Guidelines for how to set up the design of your api
+  restapitutorial
+  
