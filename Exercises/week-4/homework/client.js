@@ -42,9 +42,8 @@ var findKeyword = function(db, callback){
 }
 
 var findMostEmails = function(db, callback){
-  var senders = db.collection('emails').aggregate([{$group: {"sender": "rosalee.fleming@enron.com", "count": {$sum:1}}}]).toArray(function(err,results){
-    console.log(senders);
-    console.log(results);
+  var senders = db.emails.aggregate([{$group: {_id: "$sender", count: {$sum:1}}}, {$sort: {count: -1}}]).toArray(function(err,results){
+    console.dir(results);
     callback(results);
   })
   /*senders.each(function(err, docs){
