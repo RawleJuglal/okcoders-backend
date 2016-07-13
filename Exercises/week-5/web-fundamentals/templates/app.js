@@ -7,63 +7,10 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var fouls = require('./routes/fouls');
 var app = express();
 
-var jsonArray = [
-    {
-      firstName: 'Rawle',
-      lastName: 'Juglal'
-    },
-    {
-      firstName: 'Zach',
-      lastName: 'Mays'
-    }
-  ]
 
-var chickenGetArray =
-  {
-    firstName:'Chicken',
-    lastName:'Little'
-  }
-  
-var chickenPostArray = 
-  {
-   firstName:'Post a new firstName',
-   lastName:'Post a new lastName'
-  }
-  
-var chickenPutArray = 
-  {
-    
-  }
-app.get('/chicken/*', chickenGetCallback); //start will get anything after
-app.post('/chicken/:id', chickenPostCallback); //:id will have a req param
-app.put('/chicken', chickenPutCallback);
-app.delete('/chicken', chickenDeleteCallback);
-
-app.get('/jsonWanted', jsonGetCallback);
-
-function jsonGetCallback(req, res){
-  res.jsonp(jsonArray);
-}
-
-function chickenGetCallback(req, res){
-  res.json(chickenGetArray);
-}
-
-
-function chickenPostCallback(req, res){
-  res.send('Woo!!!Post!!')
-}
-
-function chickenPutCallback(req, res){
-  res.send('WooWoo!!!Put!!');
-}
-
-function chickenDeleteCallback(req, res){
-  res.send('Deleting chicken would not be a good idea!');
-}
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -78,9 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-
-//THESE ARE FALLBACKS FOR ANY ERRORS IN THE APPLICATION
+app.use('/fouls', fouls);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

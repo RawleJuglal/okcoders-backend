@@ -1,0 +1,35 @@
+Nodemon - a way to restart the server when changes have been made
+ which nodemon - make sure you see nothing, if you get a folder path you already have it 
+ - npm install nodemon -g 
+ -go to package.json and add in the scripts "watch":"nodemon ./bin/www"
+ -you can then run on the terminal npm run-script watch and it will reload the server after you save changes
+ 
+ 
+ In your app.js file
+ //This below allows you to chain all events on a url in one time rather than each have a seperate route
+ // the character '*' will allow anything after chicken as long as the url begins with chicken
+  app.route('chicken')
+    .get(genericCallback)
+    .post(PostCallback)
+    .put(PutCallback)
+    .delete(DeleteCallback);
+
+//This function is called if the url in browser is localhost:3000/    
+function genericCallback(req, res){
+    res.json({key:value});
+}
+    
+//This function is called if the url is a post request which can't be seen in the url (use postman extension in chrome to see)
+function postCallback(req, res){
+    res.json({key2:value2});
+}
+
+//The ':' character plus whatever in this case 'id' creates a paramater on the req
+app.get('/ducks/:id', stoppingCallback);
+
+//This would send back whatever you typed after localhost:3000/ducks/(whatever you type) 
+function stoppingCallback(req, res){
+  res.send(req.params.id);
+}
+
+11-Mongoose 
