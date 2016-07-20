@@ -1,0 +1,2 @@
+Schema - is the set of predetermined plan for adding new entries to a collection
+Model - is 
