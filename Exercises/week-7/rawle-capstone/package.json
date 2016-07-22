@@ -1,0 +1,18 @@
+{
+  "name": "rawle-capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.5.5",
+    "request": "^2.73.0"
+  }
+}
