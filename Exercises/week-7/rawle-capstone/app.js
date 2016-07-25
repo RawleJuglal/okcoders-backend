@@ -4,14 +4,15 @@ var _ = require('lodash')
 
 var minMapNumber = 1001;
 var maxMapNumber = 4944;
-var sampleMapNumber = 2713;
+var sampleMapNumber = 1001;
 
 var currentMapNumber
 var numberOfTimesCalled = 0;
 var currentState
 
-queryMapNumber(sampleMapNumber, false, 1, '');
-
+//queryMapNumber(sampleMapNumber, false, 1, '');
+ queryAccountNumber('ACCOUNTNO=R267011000');
+ 
 function queryMapNumber(mapNumber, nextPage, page, state) {
     numberOfTimesCalled++;
     console.log('times called: ', numberOfTimesCalled, page);
@@ -64,7 +65,7 @@ function gatherAccountNo(body) {
   var $ = cheerio.load(body)
   var accountNoElements = $('a[href*="ACCOUNTNO"]')
   var accountNumbers = _.map(accountNoElements, elem => elem.attribs.href)
-  console.log('discovered ' + accountNumbers.length + ' account links!');
+  console.log(accountNumbers);
   
   var currentPageInfo = pageInfo($);
   if(currentPageInfo.pagesLeft>0){
@@ -92,4 +93,38 @@ function pageInfo(body){
        pagesLeft: totalPages - currentPage
    }
    
+}
+
+function queryAccountNumber(account){
+    var url = 'http://www.oklahomacounty.org/assessor/Searches/'+account;
+    var method = 'GET';
+    
+    var options = {
+        url:url,
+        method:method
+    }
+    
+    request(options, accountQueryCallback);
+}
+
+function accountQueryCallback(err, res, body){
+    if(err)
+        {
+            console.log('Error: ' + err);
+        }
+    else
+        {
+            if(res.statusCode != 200)
+                {
+                    console.log('Status not 200, could not get data');
+                }
+            else
+                {
+                    gatherAccountInfo(body);
+                }
+        }
+}
+
+function gatherAccountInfo(body){
+    var $ = cheerio.load(body);
 }
