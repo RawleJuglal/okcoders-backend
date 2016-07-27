@@ -94,6 +94,7 @@ function scrape(mapNumber){
       var accountNumbers = _.map(accountNoElements, elem =>{
         return _.trim(elem.children[1].children[0].data);  
       });
+      console.log(accountNumbers);
       accountNumberGatherer = _.union(accountNumberGatherer, accountNumbers);
       
       var currentPageInfo = pageInfo($);
@@ -102,7 +103,7 @@ function scrape(mapNumber){
       } else {
           console.log('no more pages!');
           console.log(`I have ${accountNumberGatherer.length} accounts links gathered!`);
-          crawlAccountNumber(accountNumberGatherer);
+          //crawlAccountNumber(accountNumberGatherer);
           //loopOverMapNumbers(currentMapNumber+1, maxMapNumber);
       }
     }
